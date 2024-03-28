@@ -16,4 +16,5 @@ The laboratory equipment consists of
 * a 128x64 pixel **O**rganic **LED** (OLED) display
 * a stepping motor with driver   
 
+Please check the Wiki pages for more information.
 This is work in progress.
