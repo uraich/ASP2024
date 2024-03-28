@@ -1,6 +1,6 @@
 # ASP2024
 Course material for the **A**frican **S**chool of **P**hysics 2024, Marrakesh, Morocco.
-
+## Introduction
 At ASP2022 a workshop on small physics experiments and the **I**nternet **o**f **T**hings (IoT) has been integrated for the first time. This is a hands-on workshop where the students create small experiments.
 While in 2022 only simulated senors (a push button switch for digital sensors and a linear potentiometer for analogues sensors) have been used, the 2024 edition has been extended to real electronic sensors (temperature, humidity, barometric pressure) and actuators (Leds, TFT display, stepping motors). The sensors are read and the actuators are controlled with simple Python programs. 
 The laboratory equipment consists of
