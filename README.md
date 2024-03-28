@@ -6,6 +6,6 @@ The laboratory equipment consists of
 * an ESP32 CPU card with a MicroPython interpreter installed in its flash memory
   a user programmable LED connected to a **G**eneral **P**urpose **I**npout **O**utput (GPIO) line on the CPU card
 * a 3 slot backplane connecting the CPU to the sensors and actuators
-* a 10 k&Omega
+* a 10 k&Omega; linear potentiometer
 
 This is work in progress.
