@@ -13,7 +13,7 @@ The laboratory equipment consists of
 * a 7 LED NeoPixel ring
 * a SHT30 air temperature and relative humidity sensor
 * a BMP180 barometric pressure sensor
-* a 128x64 pixel **O**rganic LED (OLED) display
+* a 128x64 pixel **O**rganic **LED** (OLED) display
 * a stepping motor with driver   
 
 This is work in progress.
