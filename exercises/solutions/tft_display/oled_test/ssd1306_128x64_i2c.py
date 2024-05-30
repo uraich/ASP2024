@@ -191,6 +191,9 @@ def max_3(x1,x2,x3): # calculate maximum or 3 values
         return x3
     
 def drawFilledTriangle(p1_x,p1_y,p2_x,p2_y,p3_x,p3_y,color):
+    # algorithm from
+    # https://web.archive.org/web/20050408192410/http://sw-shader.sourceforge.net/rasterizer.html
+    
     # Bounding rectangle
 
     minx = min_3(p1_x, p2_x, p3_x)
