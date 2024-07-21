@@ -36,45 +36,13 @@ bmp180 = Bmp180()
 # create an object of class SSD1306 defined in ssd1306.py
 # the driver is already included in the MicroPython interpreter
 
-RES_HOR = 128
-RES_VER = 64
-
-CHARACTER_WIDTH = 8 # characters are 8 pixels wide and 8 pixels high
-
 # print the frame text on the display
-ssd1306 = SSD1306_I2C(RES_HOR,RES_VER,i2c)
+ssd1306 = SSD1306_I2C(128,64,i2c)
 ssd1306.text("Weather Station",0,0,1)
+# a character has 8x8 pixels and a line can therefore have max. 16 characters
 ssd1306.text("Temp:          C",0,20,1)
 ssd1306.text("Humidiy:       %",0,30,1)
 ssd1306.text("Press:       hPa",0,40,1)
 ssd1306.show()
 tString = None
 hString = None
-
-while True:
-    # get temperature and humidity from the SHT30
-    tempC, humi = sht30.getTempAndHumi()
-    print("Temperature: ",tempC,"°C, Humidity: ",humi,"%")
-    print("temperature (SHT30): " + str(tempC)+"°C")
-    print("relative humidity:   " + str(humi)+"%")
-
-    # get the air pressure from the BMP180
-    bmp180.measure()
-    bmp180.convert()
-    print("temperature (BMP180): " + str(bmp180.getTemperature())+"°C")
-    print("air pressure: " + str(bmp180.getPressure())+"hPa")
-    
-    # remove old results from the display 
-    if tString:
-        ssd1306.text(tString,128-7*CHARACTER_WIDTH,20,0) # 5 chars for number + space
-        ssd1306.text(hString,128-7*CHARACTER_WIDTH,30,0)
-        ssd1306.text(pString,128-9*CHARACTER_WIDTH,40,0)        
-    # write the results to the display        
-    tString = "{:5.2f}".format(tempC)
-    hString = "{:5.2f}".format(humi)
-    pString = "{:5.1f}".format(bmp180.getPressure())
-    ssd1306.text(tString,128-7*CHARACTER_WIDTH,20,1)
-    ssd1306.text(hString,128-7*CHARACTER_WIDTH,30,1)
-    ssd1306.text(pString,128-9*CHARACTER_WIDTH,40,1)    
-    ssd1306.show()
-    sleep(1)
